@@ -53,7 +53,7 @@ SHELL ["/bin/bash", "--login", "-c"]
 # WARNING: in the final Dockerfile the pull must come from either the
 # master branch (development version) or from a tagged release (released version)
 WORKDIR /home/cta/test_Docker_deployment
-RUN git clone https://github.com/HealthyPear/test_Docker_deployment.git \
+RUN git clone https://github.com/HealthyPear/test_Docker_deployment.git .\
     && git fetch --tags \
     && latestTag=$(git describe --tags `git rev-list --tags --max-count=1`) \
     && git checkout $latestTag \
